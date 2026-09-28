@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Judo in Dresden – Dresdner SV Grün-Weiß 90 e.V.</title>
+  <meta name="description" content="Judo für Kinder, Jugendliche und Erwachsene in Dresden-Johannstadt. Training dienstags und donnerstags, 4× kostenloses Probetraining.">
+  <meta name="theme-color" content="#0c1510">
+  <!-- Vorschau: vor dem Livegang auf gw-dd-judo.de entfernen -->
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="img/logo.jpg">
+  <link rel="preload" href="fonts/big-shoulders.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.jpg" alt=""><span>Grün-Weiß 90<small>Judo · Dresden</small></span></a>
+    <button class="nav-toggle" aria-label="Menü öffnen" onclick="document.querySelector('.nav ul').classList.toggle('open')">☰</button>
+    <ul onclick="this.classList.remove('open')">
+      <li><a href="#training">Training</a></li>
+      <li><a href="#weg">Dein Weg</a></li>
+      <li><a href="#beitraege">Beiträge</a></li>
+      <li><a href="#anfahrt">Anfahrt</a></li>
+      <li><a href="#aktuelles">Aktuelles</a></li>
+      <li class="cta"><a href="#kontakt">Probetraining</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<header class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="kanji-v" aria-hidden="true">柔道</div>
+  <div class="wrap rise">
+    <span class="eyebrow">Dresdner SV Grün-Weiß 90 e.V. · Johannstadt</span>
+    <h1>Judo<br><span class="outline">in Dresden</span></h1>
+    <p class="intro">Fallen lernen, aufstehen, weitermachen. Für Kinder, Jugendliche und Erwachsene, vom ersten Training bis zur Landesliga.</p>
+    <div class="actions">
+      <a class="btn" href="#kontakt">4× kostenlos testen <span class="arrow">→</span></a>
+      <a class="btn ghost" href="#training">Trainingszeiten</a>
+    </div>
+    <!-- wird automatisch aus dem Stundenplan unten berechnet -->
+    <div class="next" id="next" hidden><span class="dot"></span><span id="next-text"></span></div>
+  </div>
+  <div class="belt-stripe" aria-hidden="true"></div>
+</header>
+
+<!-- ==================== KENNZAHLEN ==================== -->
+<div class="facts">
+  <div class="wrap">
+    <div class="fact"><b>3</b><span>Trainingsgruppen</span></div>
+    <div class="fact"><b>2×</b><span>Training pro Woche</span></div>
+    <div class="fact"><b>4×</b><span>kostenlos ausprobieren</span></div>
+    <div class="fact"><b>10 €</b><span>Monatsbeitrag ab</span></div>
+  </div>
+</div>
+
+<!-- ==================== TRAINING ====================
+     Zeiten ändern: data-start / data-end anpassen UND den sichtbaren Text im <small>.
+     Die Balken und die Anzeige "Nächstes Training" oben berechnen sich daraus automatisch. -->
+<section id="training">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Stundenplan</span>
+      <h2>Trainingszeiten</h2>
+      <p class="lead">Zweimal pro Woche auf der Matte. Komm einfach zu deiner Gruppe, die ersten vier Trainings sind kostenlos.</p>
+    </div>
+
+    <div class="timetable">
+      <div class="tt-scale">
+        <span></span>
+        <div class="tt-hours"><span style="left:0">16 Uhr</span><span style="left:33.33%">18</span><span style="left:66.66%">20</span><span style="left:100%">22 Uhr</span></div>
+      </div>
+
+      <div class="tt-day" data-day="2">
+        <h3>Dienstag</h3>
+        <div class="tt-lane"><span>Kinder<em>6–12 J.</em></span><div class="tt-track"><div class="slot kids" data-group="Kinder" data-start="16:00" data-end="18:00"><b>Kinder</b> <i>6–12 J.</i> <small>16:00–18:00</small></div></div></div>
+        <div class="tt-lane"><span>Jugend<em>13–21 J.</em></span><div class="tt-track"><div class="slot youth" data-group="Jugend" data-start="18:00" data-end="20:00"><b>Jugend</b> <i>13–21 J.</i> <small>18:00–20:00</small></div></div></div>
+        <div class="tt-lane"><span>Erwachsene<em>ab 18 J.</em></span><div class="tt-track"><div class="slot adults" data-group="Erwachsene" data-start="19:30" data-end="21:30"><b>Erwachsene</b> <i>Wettkampf</i> <small>19:30–21:30</small></div></div></div>
+      </div>
+
+      <div class="tt-day" data-day="4">
+        <h3>Donnerstag</h3>
+        <div class="tt-lane"><span>Kinder<em>6–12 J.</em></span><div class="tt-track"><div class="slot kids" data-group="Kinder" data-start="16:00" data-end="18:00"><b>Kinder</b> <i>6–12 J.</i> <small>16:00–18:00</small></div></div></div>
+        <div class="tt-lane"><span>Jugend<em>13–21 J.</em></span><div class="tt-track"><div class="slot youth" data-group="Jugend" data-start="18:00" data-end="20:00"><b>Jugend</b> <i>13–21 J.</i> <small>18:00–20:00</small></div></div></div>
+        <div class="tt-lane"><span>Erwachsene<em>ab 18 J.</em></span><div class="tt-track"><div class="slot adults" data-group="Erwachsene" data-start="20:00" data-end="22:00"><b>Erwachsene</b> <i>Technik &amp; Randori</i> <small>20:00–22:00</small></div></div></div>
+      </div>
+    </div>
+
+    <div class="callouts">
+      <div class="callout strong"><b>Probetraining</b><p>Bequeme Sportsachen, etwas zu trinken, fertig. Trainiert wird barfuß.</p></div>
+      <div class="callout"><b>Sommerferien</b><p>Jugend und Erwachsene trainieren gemeinsam freitags von 19:00 bis 21:00 Uhr.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== DEIN WEG (Gürtel) ==================== -->
+<section class="path" id="weg">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Kyu-Grade</span>
+      <h2>Dein Weg zum schwarzen Gurt</h2>
+      <p class="lead">Jeder fängt mit dem weißen Gürtel an. Mit jeder Prüfung kommt eine neue Farbe dazu, und du merkst, wie viel du schon kannst.</p>
+    </div>
+    <ol class="belts">
+      <li class="belt"><i style="--c1:var(--b-white)"></i><b>9.</b><span>Kyu<br>weiß</span></li>
+      <li class="belt"><i class="split" style="--c1:var(--b-white);--c2:var(--b-yellow)"></i><b>8.</b><span>Kyu<br>weiß-gelb</span></li>
+      <li class="belt"><i style="--c1:var(--b-yellow)"></i><b>7.</b><span>Kyu<br>gelb</span></li>
+      <li class="belt"><i class="split" style="--c1:var(--b-yellow);--c2:var(--b-orange)"></i><b>6.</b><span>Kyu<br>gelb-orange</span></li>
+      <li class="belt"><i style="--c1:var(--b-orange)"></i><b>5.</b><span>Kyu<br>orange</span></li>
+      <li class="belt"><i class="split" style="--c1:var(--b-orange);--c2:var(--b-green)"></i><b>4.</b><span>Kyu<br>orange-grün</span></li>
+      <li class="belt"><i style="--c1:var(--b-green)"></i><b>3.</b><span>Kyu<br>grün</span></li>
+      <li class="belt"><i style="--c1:var(--b-blue)"></i><b>2.</b><span>Kyu<br>blau</span></li>
+      <li class="belt"><i style="--c1:var(--b-brown)"></i><b>1.</b><span>Kyu<br>braun</span></li>
+      <li class="belt"><i style="--c1:var(--b-black)"></i><b>1.</b><span>Dan<br>schwarz</span></li>
+    </ol>
+    <div class="path-foot">
+      <span>Gürtelprüfungen finden regelmäßig bei uns im Verein statt.</span>
+      <span>Prüfungsgebühr: 1,50 € · Kyu-Marke: 12 €</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PHILOSOPHIE ==================== -->
+<section class="dark">
+  <div class="wrap split-2">
+    <div>
+      <span class="eyebrow">Der sanfte Weg</span>
+      <h2 style="margin-top:16px">Mehr als Werfen</h2>
+      <p class="lead" style="margin-top:18px">Judo heißt „sanfter Weg“. Gegründet von Kanō Jigorō, beruht es auf zwei Grundsätzen, die wir auf und neben der Matte ernst nehmen.</p>
+      <div class="principles">
+        <div class="principle">
+          <span class="jp" lang="ja">精力善用</span>
+          <div><h3>Seiryoku Zen'yō</h3><p><em>Bestmöglicher Einsatz von Körper und Geist.</em> Technik schlägt Kraft: Wer die Bewegung des Gegenübers nutzt, braucht wenig Aufwand.</p></div>
+        </div>
+        <div class="principle">
+          <span class="jp" lang="ja">自他共栄</span>
+          <div><h3>Jita Kyōei</h3><p><em>Gegenseitiges Helfen zum beiderseitigen Wohl.</em> Ohne Trainingspartner kein Fortschritt. Deshalb achten wir aufeinander.</p></div>
+        </div>
+      </div>
+    </div>
+    <figure class="photo-frame" style="margin:0">
+      <img src="img/team-ruecken.jpg" alt="Zwei Judokas von hinten, auf den Rücken steht „Dresdner SV Grün-Weiß 90“" loading="lazy" style="object-position:50% 30%">
+      <figcaption>Goldener Anker Jugend Cup in Adorf, September 2026</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ==================== BEITRÄGE ==================== -->
+<section id="beitraege">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Mitgliedschaft</span>
+      <h2>Beiträge</h2>
+      <p class="lead">Ehrenamtlich organisiert, deshalb günstig. Die Aufnahmegebühr zahlst du erst, wenn du nach dem Probetraining bleiben möchtest.</p>
+    </div>
+    <div class="prices">
+      <div class="price"><span class="who">Schüler bis 16</span><span class="sub">und passive Mitglieder</span><span class="amt">10 € <small>/ Monat</small></span><span class="year">oder 120 € im Jahr</span></div>
+      <div class="price"><span class="who">Azubis &amp; Studierende</span><span class="sub">sowie Arbeitslose</span><span class="amt">10 € <small>/ Monat</small></span><span class="year">oder 120 € im Jahr</span></div>
+      <div class="price"><span class="who">Erwachsene</span><span class="sub">&nbsp;</span><span class="amt">12 € <small>/ Monat</small></span><span class="year">oder 144 € im Jahr</span></div>
+    </div>
+    <details class="extra">
+      <summary>Weitere Kosten (Budopass, Prüfungen …)</summary>
+      <table>
+        <tr><td>Aufnahmegebühr (nach dem Probetraining)</td><td class="num">3,00 €</td></tr>
+        <tr><td>Budopass</td><td class="num">10,00 €</td></tr>
+        <tr><td>Jahressichtmarke</td><td class="num">18,00 €</td></tr>
+        <tr><td>Kyu-Marke</td><td class="num">12,00 €</td></tr>
+        <tr><td>Kyu-Prüfungsgebühr</td><td class="num">1,50 €</td></tr>
+        <tr><td>Zwischengürtel (gestreift)</td><td class="num">1,50 €</td></tr>
+      </table>
+    </details>
+  </div>
+</section>
+
+<!-- ==================== ANFAHRT ==================== -->
+<section class="place" id="anfahrt">
+  <div class="wrap split-2">
+    <div>
+      <span class="eyebrow">Anfahrt</span>
+      <h2 style="margin-top:16px">So findest du uns</h2>
+      <p class="address"><b>Turnhalle der 113. Grundschule</b><br>Georg-Nerlich-Straße 1<br>01307 Dresden-Johannstadt</p>
+      <div class="entry">↳ Eingang über die Marschnerstraße</div>
+      <div><a class="btn" href="https://www.openstreetmap.org/search?query=Georg-Nerlich-Stra%C3%9Fe%201%2C%2001307%20Dresden" target="_blank" rel="noopener">Route planen <span class="arrow">→</span></a></div>
+    </div>
+    <figure class="photo-frame" style="margin:0">
+      <img src="img/kampf.jpg" alt="Wurfansatz im Wettkampf auf der Matte" loading="lazy">
+    </figure>
+  </div>
+</section>
+
+<!-- ==================== AKTUELLES & PARTNER ====================
+     Neue Meldung (z. B. nach einem Instagram-Post):
+       1. Bild nach img/news/ legen (ca. 900 px breit)
+       2. einen <article class="post">…</article>-Block kopieren, oben einfügen und anpassen
+          (Link zum Instagram-Beitrag, Bild, Datum, Überschrift, 1–2 Sätze)
+       3. den untersten Block löschen, damit es 6 bleiben -->
+<section id="aktuelles">
+  <div class="wrap">
+    <div class="head-row">
+      <div class="head">
+        <span class="eyebrow">Neuigkeiten</span>
+        <h2>Aktuelles</h2>
+      </div>
+      <a class="insta-handle" href="https://www.instagram.com/judodresden/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        Mehr auf Instagram: @judodresden →
+      </a>
+    </div>
+
+    <div class="posts">
+      <article class="post">
+        <a href="https://www.instagram.com/p/Dc82g9wiF54/" target="_blank" rel="noopener">
+          <img src="img/news/2026-09-06_adorf.jpg" alt="Zwei Judokas mit Medaillen und Urkunden, daneben ihr Trainer" loading="lazy">
+          <time datetime="2026-09-06">6. Sep 2026</time>
+          <h3>Zwei Medaillen in Adorf</h3>
+          <p>Beim Goldenen Anker Jugend Cup haben sich beide Starter mit starken Kämpfen eine Medaille geholt.</p>
+        </a>
+      </article>
+      <article class="post">
+        <a href="https://www.instagram.com/p/Dc34CuICNj8/" target="_blank" rel="noopener">
+          <img src="img/news/2026-09-04_bem.jpg" alt="Ein Wurf im Wettkampf, der Gegner landet auf dem Rücken" loading="lazy">
+          <time datetime="2026-09-04">4. Sep 2026</time>
+          <h3>Bronze bei der Offenen BEM</h3>
+          <p>Fünf unserer Judokas waren am Start, einer hat sich mit starken Kämpfen Platz 3 gesichert.</p>
+        </a>
+      </article>
+      <article class="post">
+        <a href="https://www.instagram.com/p/Db0ZUihiKb7/" target="_blank" rel="noopener">
+          <img src="img/news/2026-08-09_frauentraining.jpg" alt="Gruppenfoto der Teilnehmerinnen des Frauentrainings" loading="lazy">
+          <time datetime="2026-08-09">9. Aug 2026</time>
+          <h3>5. Frauentraining im Bezirk</h3>
+          <p>Zusammen mit dem JV Dresden: Boden, Stand und Randori, für jede war etwas dabei.</p>
+        </a>
+      </article>
+      <article class="post">
+        <a href="https://www.instagram.com/p/DaJJGm7CP0Z/" target="_blank" rel="noopener">
+          <img src="img/news/2026-06-28_jena.jpg" alt="Fünf Judokas mit Urkunden" loading="lazy">
+          <time datetime="2026-06-28">28. Jun 2026</time>
+          <h3>3× Gold in Jena</h3>
+          <p>Bei den Mitteldeutschen Hochschulmeisterschaften: dreimal Gold, einmal Silber, einmal Bronze.</p>
+        </a>
+      </article>
+      <article class="post">
+        <a href="https://www.instagram.com/p/DYxldeMiMNy/" target="_blank" rel="noopener">
+          <img src="img/news/2026-05-25_landesliga.jpg" alt="Die Männermannschaft in blauen Judoanzügen" loading="lazy">
+          <time datetime="2026-05-25">25. Mai 2026</time>
+          <h3>Platz 6 in der Landesliga</h3>
+          <p>Am finalen Kampftag in Döbeln sicherte sich unsere Männermannschaft einen starken 6. Platz.</p>
+        </a>
+      </article>
+      <article class="post">
+        <a href="https://www.instagram.com/p/DYjGz-no6Dq/" target="_blank" rel="noopener">
+          <img src="img/news/2026-05-19_schmoelln.jpg" alt="Vier Judokas mit Medaillen und Urkunden" loading="lazy">
+          <time datetime="2026-05-19">19. Mai 2026</time>
+          <h3>Drei Tickets zur Deutschen</h3>
+          <p>Mitteldeutsche Meisterschaften in Schmölln: zweimal Silber, einmal Bronze und drei Qualifikationen für die Deutsche Meisterschaft.</p>
+        </a>
+      </article>
+    </div>
+
+    <div class="partners">
+      <span class="label">Unsere Partner</span>
+      <a href="https://www.brauen.de" target="_blank" rel="noopener"><img src="img/sponsor-brauen.jpg" alt="BRAUEN.de – Bier selber brauen"></a>
+      <span class="join">Partner werden? <a href="#kontakt">Sprechen Sie uns an.</a></span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== KONTAKT ==================== -->
+<section class="contact" id="kontakt">
+  <div class="wrap">
+    <h2>Komm vorbei. Die Matte ist ausgerollt.</h2>
+    <p class="lead">Du kannst einfach zu einer Trainingszeit in die Halle kommen. Bei Fragen zur Anmeldung oder zum Probetraining schreib uns.</p>
+    <div class="people">
+      <div class="person"><h3>Bettina Reinhardt</h3><a href="mailto:Reinhardt.Bettina@t-online.de">Reinhardt.Bettina@t-online.de</a></div>
+      <div class="person"><h3>Achim Weinert</h3><a href="mailto:achim_weinert@gmx.de">achim_weinert@gmx.de</a></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© Dresdner SV Grün-Weiß 90 e.V. · Abteilung Judo</span>
+    <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
+  </div>
+</footer>
+
+<script>
+  // Navigation: nach dem Scrollen dunkel hinterlegen
+  const nav = document.querySelector('.nav');
+  const onScroll = () => nav.classList.toggle('solid', scrollY > 40);
+  addEventListener('scroll', onScroll, { passive: true }); onScroll();
+
+  // Stundenplan: Balken positionieren (Skala 16–22 Uhr)
+  const FROM = 16, TO = 22;
+  const hours = t => { const [h, m] = t.split(':').map(Number); return h + m / 60; };
+  const slots = [...document.querySelectorAll('.slot')].map(el => {
+    const s = hours(el.dataset.start), e = hours(el.dataset.end);
+    el.style.left = (s - FROM) / (TO - FROM) * 100 + '%';
+    el.style.width = (e - s) / (TO - FROM) * 100 + '%';
+    return { el, day: +el.closest('.tt-day').dataset.day, s, e, group: el.dataset.group, start: el.dataset.start, end: el.dataset.end };
+  });
+
+  // "Heute" markieren und nächstes Training anzeigen
+  const now = new Date(), today = now.getDay(), nowH = now.getHours() + now.getMinutes() / 60;
+  document.querySelectorAll('.tt-day').forEach(d => d.classList.toggle('today', +d.dataset.day === today));
+  const DAYS = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+  let text = '';
+  const running = slots.find(x => x.day === today && nowH >= x.s && nowH < x.e);
+  if (running) {
+    running.el.classList.add('now');
+    text = `<b>Läuft gerade:</b> ${running.group} bis ${running.end} Uhr`;
+  } else {
+    for (let i = 0; i < 7 && !text; i++) {
+      const d = (today + i) % 7;
+      const next = slots.filter(x => x.day === d && (i > 0 || x.s > nowH)).sort((a, b) => a.s - b.s)[0];
+      if (next) {
+        const when = i === 0 ? 'heute' : i === 1 ? 'morgen' : DAYS[d];
+        text = `<b>Nächstes Training:</b> ${when}, ${next.start} Uhr · ${next.group}`;
+      }
+    }
+  }
+  if (text) { document.getElementById('next-text').innerHTML = text; document.getElementById('next').hidden = false; }
+</script>
+</body>
+</html>
